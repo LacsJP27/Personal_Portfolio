@@ -1,0 +1,100 @@
+.experience {
+    margin-top: 0 auto;
+    padding: var(--spacing-2xl) 0;
+    min-height: 60vh;
+}
+
+.experience-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-lg) 0;
+}
+
+.experience-card {
+    background: transparent;
+    padding: var(--spacing-2xl);
+    border-radius: 12px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card-wrapper:hover .experience-card {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    /* border-color: #5A5A5A; */
+    background: #f3efe8;
+}
+
+.experience-card h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: #213547;
+    transition: color 0.3s ease;
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: #5A5A5A;;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.experience-card-wrapper:hover .experience-card h3 {
+    transform: scale(1.05);
+}
+
+.experience-card .period {
+    font-style: italic;
+    color: #666;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.experience-card .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #515151;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: color 0.3s ease;
+}
+
+.experience-card-wrapper:hover .experience-card .description {
+    color: #213547;
+}
+
+@media (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .experience-card {
+        padding: var(--spacing-xl);
+        min-height: 250px;
+    }
+    
+    .experience-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .experience-card h3 {
+        font-size: 1.2rem;
+    }
+}
+

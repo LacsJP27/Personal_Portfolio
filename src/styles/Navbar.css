@@ -1,0 +1,39 @@
+.navbar {
+    width: fit-content;
+    margin-top: 15px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 70px;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(32, 31, 31, 0.8);
+    border-radius: 70px;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar li {
+    display: inline-block;
+}

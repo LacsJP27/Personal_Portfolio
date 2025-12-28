@@ -1,0 +1,53 @@
+.education {
+    margin-top: 0 auto;
+    padding: var(--spacing-2xl) 0;
+    min-height: 60vh;
+}
+
+.education-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--spacing-2xl);
+    align-items: flex-start;
+    padding: var(--spacing-lg);
+}
+
+.education-classes {
+    flex: 1;
+}
+
+
+.education-classes h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: #5A5A5A;
+    font-weight: 500;
+}
+
+.education-card {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .education-content {
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+    
+    .education-classes h1 {
+        font-size: 2rem;
+    }
+    
+    .education-classes h2 {
+        font-size: 1.3rem;
+    }
+    
+    .education-classes li {
+        font-size: 1rem;
+    }
+}
+
