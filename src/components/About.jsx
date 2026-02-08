@@ -1,12 +1,19 @@
 import '../styles/About.css';
+import { motion } from 'motion/react';
 import image3 from '../assets/IMG_0578 2.JPG';
 import resumePDF from '../assets/JPLacsamana_Resume.pdf';
 
 export default function About() {
     // TODO: Use these images for a carousel
     return (
-        <>
-        <div id="about" className="about">
+        <motion.div
+            id="about"
+            className="about"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className="about-content">
                 <div className="about-text">
                     <h1>About Me</h1>
@@ -28,7 +35,6 @@ export default function About() {
                     <img src={image3} alt="Joseph Lacsamana" />
                 </div>
             </div>
-        </div>
-        </>
+        </motion.div>
     )
 }

@@ -1,11 +1,15 @@
-.spacer {
-    height: 300px;
+.home-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: var(--spacing-4xl);
 }
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 20vh;
 }
 
 .big-name {

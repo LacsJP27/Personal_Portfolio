@@ -1,4 +1,5 @@
 import '../styles/Experience.css';
+import { motion } from 'motion/react';
 import Card from './Card';
 
 // Sample experience data - replace with your actual experience
@@ -35,7 +36,14 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <div id="experience" className="experience">
+        <motion.div
+            id="experience"
+            className="experience"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className="experience-content">
                 <h1>Experience</h1>
                 <div className="experience-grid">
@@ -51,6 +59,6 @@ export default function Experience() {
                     ))}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

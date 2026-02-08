@@ -1,5 +1,15 @@
+import { motion } from 'motion/react';
 import Card from "./Card"
 const projects = [
+    {
+        id: 2,
+        title: "Project Title",
+        subtitle: "",
+        period: "",
+        description: "",
+        gif: "/skillsprout_demo.gif",
+        url: "https://example.com"
+    },
     {
         id: 0,
         title: "Pantry Pilot Pro",
@@ -26,8 +36,14 @@ const projects = [
 
 export default function Projects() {
     return (
-        <>
-            <div id="projects" className="projects">
+        <motion.div
+            id="projects"
+            className="projects"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
                 <h1>Projects (Gifs coming soon)</h1>
                 <div className="projects-card">
                         {projects.map((project, index) => (
@@ -36,11 +52,12 @@ export default function Projects() {
                                 title={project.title}
                                 subtitle={project.subtitle}
                                 description={project.description}
+                                gif={project.gif}
+                                url={project.url}
                                 index={index}
                             />
                         ))}
                 </div>
-            </div>
-        </>
+        </motion.div>
     )
 }

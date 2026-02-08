@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import Card from "./Card"
 import '../styles/Education.css'
 
@@ -17,8 +18,14 @@ const degrees = [
 
 export default function Education() {
     return (
-        <>
-        <div id="education" className="education">
+        <motion.div
+            id="education"
+            className="education"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+        >
             <div className="education-content">
                 <div className="education-classes">
                     <h1>Education</h1>
@@ -52,7 +59,6 @@ export default function Education() {
                     ))}
                 </div>
             </div>
-        </div>
-        </>
+        </motion.div>
     )
 }
