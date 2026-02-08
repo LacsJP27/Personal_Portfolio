@@ -1,0 +1,31 @@
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+}
+
+.project-item h2 {
+    font-size: 2rem;
+    color: #213547;
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-item p {
+    font-size: 1.1rem;
+    color: #515151;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-gif {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.project-gif:hover {
+    transform: scale(1.02);
+}

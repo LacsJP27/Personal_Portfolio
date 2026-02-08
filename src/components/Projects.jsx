@@ -1,37 +1,25 @@
 import { motion } from 'motion/react';
-import Card from "./Card"
+import '../styles/Projects.css';
+
 const projects = [
     {
         id: 2,
-        title: "Project Title",
-        subtitle: "",
-        period: "",
-        description: "",
+        title: "SkillSprout",
+        description: "AI-powered platform for skill path routing.",
         gif: "/skillsprout_demo.gif",
-        url: "https://example.com"
+        url: "https://skillsprout-beige.vercel.app/landing-page"
     },
     {
         id: 0,
-        title: "Pantry Pilot Pro",
-        subtitle: "Git, Maven, Java",
-        period: "May 2025",
-        description: "Developed Pantry Pilot, a Java web application utilizing" + 
-        " Maven to generate personalized grocery lists and recipe" +
-        " recommendations based on user preferences and on-hand ingredients." +
-        " Implemented comprehensive unit testing with Maven, achieving over 80%" + 
-        " code coverage to ensure high code quality and reliability for the web server application."
+        title: "CanvasToTasks",
+        description: "A JavaScript program leveraging Google's developer tools and APIs to automate the conversion of Canvas homework assignments to Google Tasks.",
+        gif: "/canvasToTasks_demo.gif",
     },
     {
         id: 1,
-        title: "CanvasToTasks",
-        subtitle: "Chrome Extensions, JavaScript, Google APIs",
-        period: "Jan 2025",
-        description: "Developed a JavaScript program leveraging Google's developer tools, the Google" + 
-        " Calendar API, and the Google Tasks API to automate the conversion of Canvas" +
-        " homework assignments to Google Tasks"
+        title: "Pantry Pilot Pro",
+        description: "A Java web application using Maven to generate personalized grocery lists and recipe recommendations based on user preferences and on-hand ingredients.",
     }
-
-
 ]
 
 export default function Projects() {
@@ -44,20 +32,27 @@ export default function Projects() {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-                <h1>Projects (Gifs coming soon)</h1>
-                <div className="projects-card">
-                        {projects.map((project, index) => (
-                            <Card
-                                key={project.id}
-                                title={project.title}
-                                subtitle={project.subtitle}
-                                description={project.description}
-                                gif={project.gif}
-                                url={project.url}
-                                index={index}
-                            />
-                        ))}
-                </div>
+            <h1>Projects</h1>
+            <div className="projects-list">
+                {projects.map((project, index) => (
+                    <motion.div
+                        key={project.id}
+                        className="project-item"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <h2>{project.title}</h2>
+                        <p>{project.description}</p>
+                        {project.gif && (
+                            <a href={project.url} target="_blank" rel="noopener noreferrer">
+                                <img src={project.gif} alt={project.title} className="project-gif" />
+                            </a>
+                        )}
+                    </motion.div>
+                ))}
+            </div>
         </motion.div>
     )
 }

@@ -18,12 +18,10 @@ export default function Card({
     subtitle,
     period,
     description,
-    gif,
-    url,
     index = 0,
     className = ''
 }) {
-    const content = (
+    return (
         <motion.div
             className={`card-wrapper ${className}`}
             initial={{ opacity: 0, y: 50 }}
@@ -39,7 +37,6 @@ export default function Card({
             }}
         >
             <div className="card">
-                {gif && <img src={gif} alt={title} className="card-gif" />}
                 <h2>{title}</h2>
                 {subtitle && <h3>{subtitle}</h3>}
                 {period && <p className="period">{period}</p>}
@@ -47,10 +44,4 @@ export default function Card({
             </div>
         </motion.div>
     );
-
-    if (url) {
-        return <a href={url} target="_blank" rel="noopener noreferrer" className="card-link">{content}</a>;
-    }
-
-    return content;
 }
