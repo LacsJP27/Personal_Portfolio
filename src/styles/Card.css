@@ -77,3 +77,22 @@
     }
 }
 
+@media (max-width: 480px) {
+    .card {
+        padding: var(--spacing-lg);
+        min-height: 200px;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .card .description {
+        font-size: 1rem;
+    }
+}
+

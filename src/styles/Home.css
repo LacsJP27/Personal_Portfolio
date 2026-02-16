@@ -28,3 +28,34 @@
   font-weight: 400;
   width: 40%;
 }
+
+@media (max-width: 768px) {
+  .big-name {
+    font-size: 100px;
+  }
+
+  .about-me-section {
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .home-section {
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .big-name {
+    font-size: clamp(48px, 14vw, 80px);
+  }
+
+  .about-me-section {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .home-section {
+    padding-bottom: var(--spacing-2xl);
+    min-height: 85vh;
+  }
+}

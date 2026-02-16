@@ -98,3 +98,38 @@
     }
 }
 
+@media (max-width: 480px) {
+    .experience {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .experience-content {
+        padding: 0 var(--spacing-md);
+    }
+
+    .experience-content h1 {
+        font-size: 2rem;
+    }
+
+    .experience-grid {
+        gap: var(--spacing-lg);
+    }
+
+    .experience-card {
+        padding: var(--spacing-lg);
+        min-height: 200px;
+    }
+
+    .experience-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .experience-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-card .description {
+        font-size: 1rem;
+    }
+}
+

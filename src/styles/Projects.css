@@ -29,3 +29,39 @@
 .project-gif:hover {
     transform: scale(1.02);
 }
+
+@media (max-width: 768px) {
+    .projects-list {
+        gap: var(--spacing-2xl);
+    }
+
+    .project-item h2 {
+        font-size: 1.75rem;
+    }
+
+    .project-gif {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-list {
+        gap: var(--spacing-xl);
+    }
+
+    .project-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-item p {
+        font-size: 1rem;
+    }
+
+    .project-gif {
+        border-radius: 4px;
+    }
+
+    .project-gif:hover {
+        transform: none;
+    }
+}

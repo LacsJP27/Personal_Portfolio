@@ -64,7 +64,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  color: #646cff;
+  color: white;
 }
 button:focus,
 button:focus-visible {
@@ -77,9 +77,28 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: white;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2em;
   }
 }
