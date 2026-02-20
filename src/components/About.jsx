@@ -1,5 +1,6 @@
 import '../styles/About.css';
 import { motion } from 'motion/react';
+import { Mail, Linkedin, FileText } from 'react-feather';
 import image3 from '../assets/IMG_0578 2.JPG';
 import resumePDF from '../assets/JPLacsamana_Resume.pdf';
 
@@ -26,9 +27,9 @@ export default function About() {
                         'Races I\'ve run: Too Hot to Handle! (Dallas, TX), Oklahoma Memorial Half Marathon (OKC, OK), BMW Marathon (Dallas, TX)'}
                     </p>
                     <div id="contact" className="contact-links">
-                        <a href="mailto:jplacsamana@gmail.com">Email</a>
-                        <a href="https://www.linkedin.com/in/joseph-lacsamana/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href={resumePDF} download>Resume</a>
+                        <a href="mailto:jplacsamana@gmail.com"><Mail /></a>
+                        <a href="https://www.linkedin.com/in/joseph-lacsamana/" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
+                        <a href={resumePDF} download><FileText /></a>
                     </div>
                 </div>
                 <div className="about-image">
