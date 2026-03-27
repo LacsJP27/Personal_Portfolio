@@ -6,7 +6,7 @@
     background: transparent;
     padding: var(--spacing-2xl);
     border-radius: 12px;
-    text-align: center;
+    text-align: left;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
     line-height: 1.6;
     color: #515151;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0;
     transition: color 0.3s ease;
 }
 
