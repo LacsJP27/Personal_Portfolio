@@ -1,6 +1,5 @@
 .experience {
     padding: var(--spacing-2xl) 2rem;
-    min-height: 60vh;
 }
 
 .experience h1 {
@@ -131,10 +130,16 @@
     .tabs-list {
         flex-direction: row;
         min-width: unset;
+        width: 100%;
         overflow-x: auto;
+        scrollbar-width: none;
         border-left: none;
         border-bottom: 2px solid #ddd;
         gap: 0;
+    }
+
+    .tabs-list::-webkit-scrollbar {
+        display: none;
     }
 
     .tab-btn {

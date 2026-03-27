@@ -1,3 +1,7 @@
+.projects {
+    padding: var(--spacing-2xl) 2rem;
+}
+
 .projects-list {
     display: flex;
     flex-direction: column;
