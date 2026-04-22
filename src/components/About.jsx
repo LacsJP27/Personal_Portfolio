@@ -2,7 +2,6 @@ import '../styles/About.css';
 import { motion } from 'motion/react';
 import { Mail, Linkedin, FileText } from 'react-feather';
 import image3 from '../assets/IMG_0578 2.JPG';
-import resumePDF from '../assets/JPLacsamana_Resume.pdf';
 
 export default function About() {
     // TODO: Use these images for a carousel
@@ -29,7 +28,7 @@ export default function About() {
                     <div id="contact" className="contact-links">
                         <a href="mailto:jplacsamana@gmail.com"><Mail /></a>
                         <a href="https://www.linkedin.com/in/joseph-lacsamana/" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
-                        <a href={resumePDF} download><FileText /></a>
+                        <a href="/#/resume" target="_blank" rel="noreferrer"><FileText /></a>
                     </div>
                 </div>
                 <div className="about-image">
