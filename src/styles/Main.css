@@ -1,0 +1,12 @@
+#main {
+	display: flex;
+	flex-direction: row;
+}
+
+#tabs {
+	flex: 1;
+}
+
+#cube {
+	flex: 1;
+}

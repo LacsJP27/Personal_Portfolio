@@ -1,0 +1,15 @@
+.tab {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.tab-number {
+	flex: 1;
+}
+.tab-name {
+	flex: 4;
+}
+.tab-arrow {
+	flex: 1;
+}
