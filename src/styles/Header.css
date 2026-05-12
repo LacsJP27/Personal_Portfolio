@@ -1,0 +1,10 @@
+#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#contact-info {
+	display: flex;
+	flex-direction: row;
+}

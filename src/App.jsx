@@ -1,22 +1,26 @@
-import './App.css'
-import Navbar from './components/Navbar.jsx'
-import Home from './components/Home.jsx'
-import About from './components/About.jsx'
-import Experience from './components/Experience.jsx'
-import Education from './components/Education.jsx'
-import Projects from './components/Projects.jsx'
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
 
-function App() {
-  return (
-    <>
-    <Navbar />
-    <Home />
-    <About />
-    <Experience />
-    <Education />
-    <Projects />
-    </>
-  )
+function Website() {
+	return (
+		<>
+			<Header />
+			{/* Main contains cube and tabs */}
+			{/* <Main /> */}
+			{/* <LightToggle /> */}
+		</>
+	);
 }
 
-export default App
+export default function App() {
+	return (
+		<>
+			<HashRouter>
+				<Routes>
+					<Route path="/" element={<Website />} />
+					{/* <Route path="/about-me" element={<AboutMe />} /> */}
+				</Routes>
+			</HashRouter>
+		</>
+	);
+}

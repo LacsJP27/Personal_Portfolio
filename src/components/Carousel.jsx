@@ -1,1 +1,0 @@
-// TODO: make a carousel feature for the about me section
