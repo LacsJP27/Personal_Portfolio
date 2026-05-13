@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 
-const WIDTH = 80;
-const HEIGHT = 80;
+const WIDTH = 65;
+const HEIGHT = 60;
 const CAMERA_TO_SCREEN = 45;
 const NUM_POINT_SAMPLES = 40;
 const ROTATION_RATE = 0.01;
@@ -47,7 +47,7 @@ function renderBuffer(buffer, cubeRef) {
 		}
 		res += '\n';
 	}
-	cubeRef.current.innerText = res;
+	if (cubeRef.current) cubeRef.current.innerText = res;
 }
 
 function rotateX(point, alpha) {

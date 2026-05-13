@@ -27,7 +27,7 @@ export default function Header() {
 					</a>
 				</div>
 				<div id="about-me">
-					<a link="/about-me">ABOUT ME →</a>
+					<Link to="/about-me">ABOUT ME →</Link>
 				</div>
 			</div>
 		</div>
