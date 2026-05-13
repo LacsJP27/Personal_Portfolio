@@ -8,3 +8,15 @@
 	display: flex;
 	flex-direction: row;
 }
+
+h1 {
+	font-size: var(--font-size-masthead);
+	font-weight: var(--font-size-masthead-weight);
+}
+
+h2 {
+	font-family: var(--accent-font-family);
+	font-size: var(--font-size-submasthead);
+	font-weight: var(--font-size-submasthead-weight);
+	color: var(--muted-color);
+}

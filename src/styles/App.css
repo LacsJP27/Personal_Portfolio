@@ -1,13 +1,41 @@
+/* Inter font with Jetbrains Mono */
+/* Geist font with Geist Mono */
+/*IBM Plex sans and IBM Plex Mono*/
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 .light {
-	background-color: #f0f0f0;
-	color: #000000;
+	background-color: #f8f6f1;
+	color: #0a0a0a;
 }
 
 .dark {
-	background-color: #121212;
-	color: #ffffff;
+	background-color: #0a0a0a;
+	color: #f8f6f1;
 }
 
 #background-mode {
 	min-height: 100vh;
+}
+body {
+	font-family: 'Inter', 'sans-serif';
+}
+
+:root {
+	--font-size-masthead: 56px;
+	--font-size-submasthead: 20px;
+	--font-size-masthead-weight: 500;
+	--font-size-submasthead-weight: 400;
+	--accent-font-family: 'JetBrains Mono', 'monospace';
+	--muted-color: #8a8576;
+	--light-hairline-color: #e4e0d6;
+	--dark-hairline-color: #1f1f1f;
+
+	/* Spacing Scale */
+	--spacing-xs: 8px;
+	--spacing-sm: 16px;
+	--spacing-md: 24px;
+	--spacing-lg: 32px;
+	--spacing-xl: 56px;
+	--spacing-2xl: 64px;
+	--spacing-3xl: 96px;
 }

@@ -1,10 +1,17 @@
 .tab {
 	display: flex;
 	flex-direction: row;
+	padding-top: var(--spacing-sm);
+	padding-bottom: var(--spacing-sm);
+	font-size: var(--font-size-masthead);
+	align-items: center;
 }
 
 .tab-number {
 	flex: 1;
+	font-family: var(--accent-font-family);
+	font-size: var(--font-size-submasthead);
+	color: var(--muted-color);
 }
 .tab-name {
 	flex: 4;
