@@ -12,6 +12,14 @@
 	margin-bottom: var(--spacing-sm);
 	gap: var(--spacing-md);
 }
+
+#contact-info a svg {
+	stroke: var(--muted-color);
+}
+#contact-info a svg:hover {
+	stroke: var(--dark-hairline-color);
+}
+
 #right-side {
 	margin-top: var(--spacing-md);
 	display: flex;
@@ -20,15 +28,16 @@
 	justify-content: space-between;
 }
 
-#about-me {
-}
-
 #about-me a {
 	text-decoration: none;
 	font-family: var(--accent-font-family);
 	font-size: var(--font-size-submasthead);
 	font-weight: var(--font-size-submasthead-weight);
 	color: var(--muted-color);
+}
+
+#about-me a:hover {
+	text-decoration: underline;
 }
 
 #name {
