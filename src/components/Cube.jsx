@@ -1,8 +1,8 @@
 import { useRef, useEffect } from 'react';
 
 const WIDTH = 65;
-const HEIGHT = 50;
-const CAMERA_TO_SCREEN = 45;
+const HEIGHT = 35;
+const CAMERA_TO_SCREEN = 35;
 const NUM_POINT_SAMPLES = 40;
 const ROTATION_RATE = 0.01;
 const OFFSET_VAL = 4;

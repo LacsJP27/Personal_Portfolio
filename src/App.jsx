@@ -15,7 +15,9 @@ function Home({ darkMode, setDarkMode }) {
 			<Header />
 			{/* Main contains cube and tabs */}
 			<Main />
-			<LightToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+			<div id="light-toggle-container">
+				<LightToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+			</div>
 		</>
 	);
 }
@@ -24,7 +26,7 @@ export default function App() {
 	let [darkMode, setDarkMode] = useState(false);
 	return (
 		<>
-			<div id="background-mode" className={darkMode ? 'dark' : 'light'}>
+			<div id="page" className={darkMode ? 'dark' : 'light'}>
 				<HashRouter>
 					<Routes>
 						<Route

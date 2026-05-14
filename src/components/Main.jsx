@@ -3,7 +3,7 @@ import Cube from './Cube';
 import Experience from './Experience';
 import '../styles/Main.css';
 import { useNavigate } from 'react-router-dom';
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
 	PROJECTS_ROUTE,
 	PICTURES_ROUTE,

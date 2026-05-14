@@ -3,7 +3,7 @@
 	flex-direction: row;
 	padding-top: var(--spacing-sm);
 	padding-bottom: var(--spacing-sm);
-	font-size: var(--font-size-masthead);
+	font-size: var(--font-size-h2);
 	align-items: center;
 }
 

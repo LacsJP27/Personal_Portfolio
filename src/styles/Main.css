@@ -1,6 +1,7 @@
 #main {
 	display: flex;
 	flex-direction: row;
+	align-items: stretch;
 }
 
 #tabs {
@@ -11,4 +12,5 @@
 	flex: 1;
 	align-self: flex-start;
 	text-align: center;
+	overflow: hidden;
 }

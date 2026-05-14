@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import BackBtn from './BackBtn.jsx';
+import '../styles/AboutMe.css';
 
 export default function AboutMe() {
-	const navigate = useNavigate();
-
 	return (
 		<>
 			<BackBtn />

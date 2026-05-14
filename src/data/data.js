@@ -1,5 +1,3 @@
-import { title } from 'motion/react-client';
-
 export const EXPERIENCE = [
 	{
 		company: 'Microsoft',

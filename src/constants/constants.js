@@ -6,3 +6,6 @@ export const EMAIL = 'jplacsamana@gmail.com';
 export const PICTURES_ROUTE = '/pictures';
 export const PROJECTS_ROUTE = '/projects';
 export const BLOG_ROUTE = '/blog';
+
+export const HEADLINE =
+	'CS + Math - OU | SWE - Microsoft, Google, Momentus Technologies';

@@ -2,21 +2,45 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin-bottom: var(--spacing-2xl);
+	align-items: center;
 }
 
 #contact-info {
 	display: flex;
 	flex-direction: row;
+	margin-bottom: var(--spacing-sm);
+	gap: var(--spacing-md);
+}
+#right-side {
+	margin-top: var(--spacing-md);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between;
 }
 
-h1 {
-	font-size: var(--font-size-masthead);
-	font-weight: var(--font-size-masthead-weight);
+#about-me {
 }
 
-h2 {
+#about-me a {
+	text-decoration: none;
 	font-family: var(--accent-font-family);
 	font-size: var(--font-size-submasthead);
 	font-weight: var(--font-size-submasthead-weight);
 	color: var(--muted-color);
+}
+
+#name {
+	font-size: var(--font-size-masthead);
+	font-weight: var(--font-size-masthead-weight);
+	margin: 0;
+}
+
+#headline {
+	font-family: var(--accent-font-family);
+	font-size: var(--font-size-submasthead);
+	font-weight: var(--font-size-submasthead-weight);
+	color: var(--muted-color);
+	margin: 0;
 }
