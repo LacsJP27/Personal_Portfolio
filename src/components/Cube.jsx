@@ -1,4 +1,9 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+
+// Explosion implementation
+// 1. spinning mode -> <pre> /innerText approach
+// 2. on click -> stop spinning explode, setMode('exploding') -> cance rAF, render each character as a <span> with computed (dx, dy)
+// 3. content fades in underneath.
 
 const WIDTH = 65;
 const HEIGHT = 35;
@@ -6,6 +11,8 @@ const CAMERA_TO_SCREEN = 35;
 const NUM_POINT_SAMPLES = 40;
 const ROTATION_RATE = 0.01;
 const OFFSET_VAL = 4;
+const EXPLOSION_DURATION = 0.2;
+const EXPLOSION_DISTANCE = 50;
 
 class Square {
 	constructor(
@@ -96,6 +103,56 @@ function pointOutOfBounds(point) {
 	return outOfBounds;
 }
 
+function buildExplosion(
+	cubeRef,
+	lastBufferRef,
+	rectWidth,
+	rectHeight,
+	charWidth,
+	charHeight,
+) {
+	// const charWidth = rectWidth / WIDTH;
+	// const charHeight = rectHeight / HEIGHT;
+	const cx = rectWidth / 2;
+	const cy = rectHeight / 2;
+	const particles = [];
+	const offsetX = (rectWidth - WIDTH * charWidth) / 2;
+	const offsetY = (rectHeight - HEIGHT * charHeight) / 2 + charHeight;
+
+	console.log('charHeight', charHeight);
+	console.log('rectHeight:', rectHeight);
+	console.log('HEIGHT * charHeight:', HEIGHT * charHeight);
+	console.log('offsetY:', offsetY);
+	console.log(getComputedStyle(cubeRef.current).paddingTop);
+
+	for (let y = 0; y < lastBufferRef.current.length; y++) {
+		for (let x = 0; x < lastBufferRef.current[0].length; x++) {
+			const char = lastBufferRef.current[y][x];
+			if (char === ' ') continue;
+
+			const px = x * charWidth + offsetX;
+			const py = y * charHeight + offsetY;
+			const dx = (px - cx) * (charHeight / charWidth);
+			const dy = py - cy;
+			const normX = x / WIDTH - 0.5;
+			const normY = y / HEIGHT - 0.5; // -0.5 to 0.5
+			const angle = Math.atan2(normY, normX);
+			const magnitude = Math.sqrt(dx * dx + dy * dy);
+			// const dir = [dx / (magnitude || 1), dy / (magnitude || 1)];
+			const dir = [Math.cos(angle), Math.sin(angle)];
+			const particle = {
+				char,
+				x: px,
+				y: py,
+				dir,
+			};
+			particles.push(particle);
+		}
+	}
+
+	return particles;
+}
+
 function renderFace(face, angleX, angleY, angleZ, buffer, zBuffer) {
 	const sampleStep = 2 / NUM_POINT_SAMPLES;
 	for (let u = 0; u <= 2; u += sampleStep) {
@@ -126,23 +183,52 @@ function renderFace(face, angleX, angleY, angleZ, buffer, zBuffer) {
 	return buffer;
 }
 
-function animate(faces, angleX, angleY, angleZ, cubeRef) {
+function animate(
+	faces,
+	angleX,
+	angleY,
+	angleZ,
+	cubeRef,
+	frameIdRef,
+	lastBufferRef,
+	currAnglesRef,
+) {
 	const buffer = createBuffer();
 	const zBuffer = createBuffer(true);
-	// Convert degrees to radians and pass to Math.sin
+	lastBufferRef.current = buffer;
 
 	angleX += ROTATION_RATE + 0.005;
 	angleY += ROTATION_RATE;
 	angleZ += ROTATION_RATE;
+	currAnglesRef.current = [angleX, angleY, angleZ];
 	for (const face of faces) {
 		renderFace(face, angleX, angleY, angleZ, buffer, zBuffer);
 	}
 	renderBuffer(buffer, cubeRef);
-	requestAnimationFrame(() => animate(faces, angleX, angleY, angleZ, cubeRef));
+	frameIdRef.current = requestAnimationFrame(() =>
+		animate(
+			faces,
+			angleX,
+			angleY,
+			angleZ,
+			cubeRef,
+			frameIdRef,
+			lastBufferRef,
+			currAnglesRef,
+		),
+	);
 }
 
 export default function Cube() {
 	const cubeRef = useRef(null);
+	const frameIdRef = useRef(null);
+	const lastBufferRef = useRef(null);
+	const currAnglesRef = useRef([0, 0, 0]);
+	let [mode, setMode] = useState('spinning');
+	let [particles, setParticles] = useState([]);
+	let [rect, setRect] = useState(null);
+	let [scattered, setScattered] = useState(false);
+
 	useEffect(() => {
 		const faces = new Array(6);
 		// front
@@ -158,8 +244,107 @@ export default function Cube() {
 		// bottom
 		faces[5] = new Square([-1, -1, 1], [1, 0, 0], [0, 0, -1], [0, -1, 0], 's');
 
-		animate(faces, 0, 0, 0, cubeRef);
+		animate(faces, 0, 0, 0, cubeRef, frameIdRef, lastBufferRef, currAnglesRef);
+		return () => cancelAnimationFrame(frameIdRef.current);
 	}, []);
 
-	return <pre ref={cubeRef}></pre>;
+	function handleClick() {
+		//on click -> stop spinning explode, setMode('exploding') -> cancel rAF, render each character as a <span> with computed (dx, dy)
+		if (mode === 'spinning') {
+			setMode('exploding');
+			const rect = cubeRef.current.getBoundingClientRect();
+			setRect(rect);
+			const rectWidth = rect.width;
+			const rectHeight = rect.height;
+
+			cancelAnimationFrame(frameIdRef.current);
+
+			const testSpan = document.createElement('span');
+			testSpan.style.fontFamily = getComputedStyle(cubeRef.current).fontFamily;
+			testSpan.style.fontSize = getComputedStyle(cubeRef.current).fontSize;
+			testSpan.style.position = 'absolute';
+			testSpan.style.visibility = 'hidden';
+			testSpan.innerText = 'a';
+			document.body.appendChild(testSpan);
+			const charWidth = testSpan.getBoundingClientRect().width;
+			const charHeight = testSpan.getBoundingClientRect().height;
+			// const lineHeight = parseFloat(
+			// 	getComputedStyle(cubeRef.current).lineHeight,
+			// );
+			document.body.removeChild(testSpan);
+
+			// console.log('charWidth', charWidth, 'lineHeight', lineHeight);
+
+			const explosionParticles = buildExplosion(
+				cubeRef,
+				lastBufferRef,
+				rectWidth,
+				rectHeight,
+				charWidth,
+				charHeight,
+			);
+			setParticles(explosionParticles);
+
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => setScattered(true));
+			});
+		} else {
+			setScattered(false);
+			setTimeout(() => {
+				setMode('spinning');
+				setParticles([]);
+				animate(
+					[
+						new Square([-1, -1, 1], [1, 0, 0], [0, 1, 0], [0, 0, 1], 'j'),
+						new Square([-1, -1, -1], [1, 0, 0], [0, 1, 0], [0, 0, -1], 'p'),
+						new Square([-1, -1, -1], [0, 0, 1], [0, 1, 0], [-1, 0, 0], 'l'),
+						new Square([1, -1, 1], [0, 0, -1], [0, 1, 0], [1, 0, 0], 'a'),
+						new Square([-1, 1, 1], [0, 0, -1], [1, 0, 0], [0, 1, 0], 'c'),
+						new Square([-1, -1, 1], [1, 0, 0], [0, 0, -1], [0, -1, 0], 's'),
+					],
+					currAnglesRef.current[0],
+					currAnglesRef.current[1],
+					currAnglesRef.current[2],
+					cubeRef,
+					frameIdRef,
+					lastBufferRef,
+					currAnglesRef,
+				);
+			}, EXPLOSION_DURATION * 1000);
+		}
+	}
+	if (mode == 'exploding') {
+		return (
+			<div
+				style={{
+					position: 'relative',
+					width: rect?.width,
+					height: rect?.height,
+				}}
+				onClick={() => handleClick()}
+			>
+				{particles.map((p, idx) => (
+					<span
+						key={idx}
+						style={{
+							position: 'absolute',
+							margin: 0,
+							left: `${p.x}px`,
+							top: `${p.y}px`,
+							fontFamily: 'monospace',
+							whiteSpace: 'pre',
+							transform: scattered
+								? `translate(${p.dir[0] * EXPLOSION_DISTANCE}px, ${p.dir[1] * EXPLOSION_DISTANCE}px)`
+								: `translate(0, 0)`,
+							transition: `transform ${EXPLOSION_DURATION}s ease-out`,
+						}}
+					>
+						{p.char}
+					</span>
+				))}
+			</div>
+		);
+	}
+
+	return <pre ref={cubeRef} onClick={() => handleClick()}></pre>;
 }
