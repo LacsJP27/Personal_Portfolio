@@ -26,3 +26,25 @@
 	cursor: pointer;
 	border: none;
 }
+
+.experience img {
+	width: 1.5rem;
+	height: 1.5rem;
+	vertical-align: middle;
+	margin-right: var(--spacing-xs);
+	padding-bottom: 5px;
+}
+
+#job-title {
+	font-size: var(--font-size-small);
+	font-weight: var(--font-size-submasthead-weight);
+}
+
+#job-headline {
+	font-weight: var(--font-size-submasthead-weight);
+}
+
+.experience p {
+	font-family: var(--accent-font-family);
+	color: var(--muted-color);
+}
