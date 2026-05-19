@@ -2,7 +2,7 @@ import { EXPERIENCE } from '../data/data.js';
 import '../styles/Experience.css';
 import { ArrowLeft, X } from 'react-feather';
 
-export default function Experience({ setDisplay }) {
+export default function Experience({ setActiveSection }) {
 	return (
 		<div className="experience">
 			<ul id="experience-list">
@@ -18,7 +18,7 @@ export default function Experience({ setDisplay }) {
 					</li>
 				))}
 			</ul>
-			<button className="close-btn" onClick={() => setDisplay(false)}>
+			<button className="close-btn" onClick={() => setActiveSection(null)}>
 				<ArrowLeft size={16} />
 			</button>
 		</div>

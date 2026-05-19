@@ -1,6 +1,7 @@
 import Tab from './Tab';
 import Cube from './Cube';
 import Experience from './Experience';
+import Projects from './Projects';
 import '../styles/Main.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -16,24 +17,46 @@ export default function Main() {
 	const navigate = useNavigate();
 	let [displayExperience, setDisplayExperience] = useState(false);
 	const [shouldExplode, setShouldExplode] = useState(false);
-	const activeTab = null;
+	const [pendingSection, setPendingSection] = useState(null);
 	const tabs = ['experience', 'projects'];
+	const [activeSection, setActiveSection] = useState(null);
 
 	const onClickRedirect = (path) => {
 		navigate(path);
 	};
 
-	const onClickPopup = () => {
-		if (displayExperience) {
-			setDisplayExperience(!displayExperience);
+	const onClickPopup = (clickedSection) => {
+		if (activeSection !== null) {
+			setActiveSection(null);
 			return;
 		}
+		setPendingSection(clickedSection);
 		setShouldExplode(true);
 	};
 
 	const onExplosionComplete = () => {
 		setShouldExplode(false);
-		setDisplayExperience(!displayExperience);
+		setActiveSection(pendingSection);
+		setPendingSection(null);
+	};
+
+	const renderRightPanel = () => {
+		if (activeSection === tabs[0]) {
+			return <Experience setActiveSection={setActiveSection} />;
+		}
+
+		if (activeSection === tabs[1]) {
+			return <Projects setActiveSection={setActiveSection} />;
+		}
+
+		return (
+			<div id="cube-container">
+				<Cube
+					shouldExplode={shouldExplode}
+					onExplosionComplete={onExplosionComplete}
+				/>
+			</div>
+		);
 	};
 
 	return (
@@ -42,13 +65,14 @@ export default function Main() {
 				<Tab
 					number={1}
 					name="Experience"
-					isActive={displayExperience}
-					onClick={onClickPopup}
+					isActive={activeSection === tabs[0]}
+					onClick={() => onClickPopup(tabs[0])}
 				/>
 				<Tab
 					number={2}
+					isActive={activeSection === tabs[1]}
 					name="Projects"
-					onClick={() => onClickRedirect(PROJECTS_ROUTE)}
+					onClick={() => onClickPopup(tabs[1])}
 				/>
 				<Tab
 					number={3}
@@ -61,18 +85,7 @@ export default function Main() {
 					onClick={() => onClickRedirect(BLOG_ROUTE)}
 				/>
 			</div>
-			<div id="right-container">
-				{displayExperience ? (
-					<Experience setDisplay={setDisplayExperience} />
-				) : (
-					<div id="cube-container">
-						<Cube
-							shouldExplode={shouldExplode}
-							onExplosionComplete={onExplosionComplete}
-						/>
-					</div>
-				)}
-			</div>
+			<div id="right-container">{renderRightPanel()}</div>
 		</div>
 	);
 }

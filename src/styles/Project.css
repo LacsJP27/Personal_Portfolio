@@ -1,0 +1,23 @@
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.projects {
+	animation: fade-in 0.5s ease-in-out;
+}
+
+#project-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.close-btn {
+	background: none;
+	cursor: pointer;
+	border: none;
+}

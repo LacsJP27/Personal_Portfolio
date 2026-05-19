@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Header from './components/Header.jsx';
 import Main from './components/Main.jsx';
 import AboutMe from './components/AboutMe.jsx';
-import ProjectList from './components/ProjectList.jsx';
 import Pictures from './components/Pictures.jsx';
 import Blog from './components/Blog.jsx';
 import LightToggle from './components/LightToggle.jsx';
@@ -34,7 +33,7 @@ export default function App() {
 							element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
 						/>
 						<Route path="/about-me" element={<AboutMe />} />
-						<Route path="/projects" element={<ProjectList />} />
+						{/* <Route path="/projects" element={<ProjectList />} /> */}
 						<Route path="/pictures" element={<Pictures />} />
 						<Route path="/blog" element={<Blog />} />
 					</Routes>
