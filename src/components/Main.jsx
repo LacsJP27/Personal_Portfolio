@@ -16,6 +16,8 @@ export default function Main() {
 	const navigate = useNavigate();
 	let [displayExperience, setDisplayExperience] = useState(false);
 	const [shouldExplode, setShouldExplode] = useState(false);
+	const activeTab = null;
+	const tabs = ['experience', 'projects'];
 
 	const onClickRedirect = (path) => {
 		navigate(path);

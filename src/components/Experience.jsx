@@ -1,13 +1,10 @@
 import { EXPERIENCE } from '../data/data.js';
 import '../styles/Experience.css';
+import { ArrowLeft, X } from 'react-feather';
 
 export default function Experience({ setDisplay }) {
 	return (
 		<div className="experience">
-			<button className="close-btn" onClick={() => setDisplay(false)}>
-				X
-			</button>
-			{/* <h2>Experience</h2> */}
 			<ul id="experience-list">
 				{EXPERIENCE.map((job, index) => (
 					<li key={index}>
@@ -21,6 +18,9 @@ export default function Experience({ setDisplay }) {
 					</li>
 				))}
 			</ul>
+			<button className="close-btn" onClick={() => setDisplay(false)}>
+				<ArrowLeft size={16} />
+			</button>
 		</div>
 	);
 }

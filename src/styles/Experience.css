@@ -20,3 +20,9 @@
 	font-weight: var(--font-size-submasthead-weight);
 	color: var(--muted-color);
 }
+
+.close-btn {
+	background: none;
+	cursor: pointer;
+	border: none;
+}
