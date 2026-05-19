@@ -5,6 +5,12 @@
 	padding-bottom: var(--spacing-sm);
 	font-size: var(--font-size-h2);
 	align-items: center;
+	transition: transform 0.2s ease;
+}
+
+.tab:hover {
+	transform: translateX(8px);
+	cursor: pointer;
 }
 
 .tab-number {
@@ -18,4 +24,8 @@
 }
 .tab-arrow {
 	flex: 1;
+}
+
+.tab.active {
+	transform: translateX(16px);
 }

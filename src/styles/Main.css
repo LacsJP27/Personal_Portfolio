@@ -11,6 +11,17 @@
 #right-container {
 	flex: 1;
 	align-self: flex-start;
-	text-align: center;
+	text-align: left;
 	overflow: hidden;
+	margin-left: var(--spacing-2xl);
+}
+
+#right-container h2 {
+	font-size: var(--font-size-h2);
+	font-weight: var(--font-size-h2-weight);
+	margin-top: 0;
+}
+
+#cube-container {
+	text-align: center;
 }

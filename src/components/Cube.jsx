@@ -4,7 +4,7 @@ const WIDTH = 65;
 const HEIGHT = 35;
 const CAMERA_TO_SCREEN = 35;
 const NUM_POINT_SAMPLES = 40;
-const ROTATION_RATE = 0.005;
+const ROTATION_RATE = 0.008;
 const OFFSET_VAL = 4;
 const EXPLOSION_DURATION = 0.5;
 const EXPLOSION_DISTANCE = 420;
@@ -207,7 +207,7 @@ function animate(
 	);
 }
 
-export default function Cube() {
+export default function Cube({ shouldExplode, onExplosionComplete }) {
 	const cubeRef = useRef(null);
 	const frameIdRef = useRef(null);
 	const lastBufferRef = useRef(null);
@@ -222,40 +222,53 @@ export default function Cube() {
 		return () => cancelAnimationFrame(frameIdRef.current);
 	}, []);
 
+	useEffect(() => {
+		if (shouldExplode) {
+			explodeCube();
+			setTimeout(() => {
+				onExplosionComplete();
+			}, EXPLOSION_DURATION * 1000);
+		}
+	}, [shouldExplode]);
+
+	function explodeCube() {
+		setMode('exploding');
+		const rect = cubeRef.current.getBoundingClientRect();
+		setRect(rect);
+		const rectWidth = rect.width;
+		const rectHeight = rect.height;
+
+		cancelAnimationFrame(frameIdRef.current);
+
+		const testSpan = document.createElement('span');
+		testSpan.style.fontFamily = getComputedStyle(cubeRef.current).fontFamily;
+		testSpan.style.fontSize = getComputedStyle(cubeRef.current).fontSize;
+		testSpan.style.position = 'absolute';
+		testSpan.style.visibility = 'hidden';
+		testSpan.innerText = 'a';
+		document.body.appendChild(testSpan);
+		const charWidth = testSpan.getBoundingClientRect().width;
+		const charHeight = testSpan.getBoundingClientRect().height;
+
+		document.body.removeChild(testSpan);
+
+		const explosionParticles = buildExplosion(
+			lastBufferRef,
+			rectWidth,
+			rectHeight,
+			charWidth,
+			charHeight,
+		);
+		setParticles(explosionParticles);
+
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => setScattered(true));
+		});
+	}
+
 	function handleClick() {
 		if (mode === 'spinning') {
-			setMode('exploding');
-			const rect = cubeRef.current.getBoundingClientRect();
-			setRect(rect);
-			const rectWidth = rect.width;
-			const rectHeight = rect.height;
-
-			cancelAnimationFrame(frameIdRef.current);
-
-			const testSpan = document.createElement('span');
-			testSpan.style.fontFamily = getComputedStyle(cubeRef.current).fontFamily;
-			testSpan.style.fontSize = getComputedStyle(cubeRef.current).fontSize;
-			testSpan.style.position = 'absolute';
-			testSpan.style.visibility = 'hidden';
-			testSpan.innerText = 'a';
-			document.body.appendChild(testSpan);
-			const charWidth = testSpan.getBoundingClientRect().width;
-			const charHeight = testSpan.getBoundingClientRect().height;
-
-			document.body.removeChild(testSpan);
-
-			const explosionParticles = buildExplosion(
-				lastBufferRef,
-				rectWidth,
-				rectHeight,
-				charWidth,
-				charHeight,
-			);
-			setParticles(explosionParticles);
-
-			requestAnimationFrame(() => {
-				requestAnimationFrame(() => setScattered(true));
-			});
+			explodeCube();
 		} else {
 			setScattered(false);
 			setTimeout(() => {

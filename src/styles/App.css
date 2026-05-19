@@ -35,6 +35,7 @@ body {
 	--font-size-submasthead: 20px;
 	--font-size-masthead-weight: 500;
 	--font-size-submasthead-weight: 400;
+	--font-size-small: 14px;
 	--accent-font-family: 'JetBrains Mono', 'monospace';
 	--muted-color: #8a8576;
 	--light-hairline-color: #e4e0d6;
