@@ -1,11 +1,18 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import {
+	ABOUT_ME_ROUTE,
+	PICTURES_ROUTE,
+	BLOG_ROUTE,
+	RESUME_ROUTE,
+} from './constants/constants.js';
 import Header from './components/Header.jsx';
 import Main from './components/Main.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import Pictures from './components/Pictures.jsx';
 import Blog from './components/Blog.jsx';
 import LightToggle from './components/LightToggle.jsx';
+import Resume from './components/Resume.jsx';
 import './styles/App.css';
 
 function Home({ darkMode, setDarkMode }) {
@@ -32,10 +39,11 @@ export default function App() {
 							path="/"
 							element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
 						/>
-						<Route path="/about-me" element={<AboutMe />} />
+						<Route path={ABOUT_ME_ROUTE} element={<AboutMe />} />
 						{/* <Route path="/projects" element={<ProjectList />} /> */}
-						<Route path="/pictures" element={<Pictures />} />
-						<Route path="/blog" element={<Blog />} />
+						<Route path={PICTURES_ROUTE} element={<Pictures />} />
+						<Route path={BLOG_ROUTE} element={<Blog />} />
+						<Route path={RESUME_ROUTE} element={<Resume />} />
 					</Routes>
 				</HashRouter>
 			</div>

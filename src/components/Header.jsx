@@ -7,9 +7,11 @@ import {
 	ABOUT_ME_ROUTE,
 } from '../constants/constants.js';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/header.css';
 
 export default function Header() {
+	const navigate = useNavigate();
 	return (
 		<div id="header">
 			<div id="title">
@@ -28,7 +30,7 @@ export default function Header() {
 						<GitHub size={22} />
 					</a>
 					{/* TODO: Replace with actual resume URL */}
-					<a href="RESUME.PDF" target="_blank">
+					<a href="/#/resume" target="_blank" rel="noreferrer">
 						<FileText size={22} />
 					</a>
 				</div>

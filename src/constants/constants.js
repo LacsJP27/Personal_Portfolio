@@ -7,6 +7,7 @@ export const PICTURES_ROUTE = '/pictures';
 export const PROJECTS_ROUTE = '/projects';
 export const BLOG_ROUTE = '/blog';
 export const ABOUT_ME_ROUTE = '/about-me';
+export const RESUME_ROUTE = '/resume';
 
 export const HEADLINE =
 	'CS + Math - OU | SWE - Microsoft, Google, Momentus Technologies';
