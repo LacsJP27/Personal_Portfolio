@@ -1,13 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import BackBtn from './BackBtn.jsx';
+import aboutMe from '../content/about-me.md?raw';
 import '../styles/AboutMe.css';
 
 export default function AboutMe() {
 	return (
 		<>
 			<BackBtn />
-			<h1>About Me</h1>
-			<p>TODO</p>
+			<div id="about-me-content">
+				<ReactMarkdown>{aboutMe}</ReactMarkdown>
+			</div>
 		</>
 	);
 }

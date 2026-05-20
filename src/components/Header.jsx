@@ -15,7 +15,7 @@ export default function Header() {
 	return (
 		<div id="header">
 			<div id="title">
-				<h1 id="name">Joseph Lacsamana</h1>
+				<h1 id="name">JP Lacsamana</h1>
 				<h2 id="headline">{HEADLINE}</h2>
 			</div>
 			<div id="right-side">

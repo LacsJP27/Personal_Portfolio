@@ -1,0 +1,12 @@
+#about-me-content {
+	max-width: 740px;
+	margin: 0 auto;
+	padding: var(--spacing-lg) 0;
+	line-height: 1.7;
+}
+
+#about-me-content h1 {
+	font-size: var(--font-size-masthead);
+	margin-bottom: var(--spacing-xs);
+	font-weight: var(--font-size-submasthead-weight);
+}

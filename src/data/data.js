@@ -3,6 +3,7 @@ import googleLogo from '../assets/google.svg';
 import momentusLogo from '../assets/momentus.png';
 import OULogo from '../assets/OU.png';
 import firstPost from '../content/first-post.md?raw';
+import aboutMe from '../content/about-me.md?raw';
 
 export const EXPERIENCE = [
 	{
