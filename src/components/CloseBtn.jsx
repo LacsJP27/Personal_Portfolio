@@ -1,4 +1,5 @@
 import { ArrowLeft } from 'react-feather';
+import '../styles/CloseBtn.css';
 
 export default function CloseBtn({ setActiveSection }) {
 	return (

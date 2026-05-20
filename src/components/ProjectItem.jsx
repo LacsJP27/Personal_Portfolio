@@ -1,16 +1,30 @@
-import { PROJECTS } from '../data/data.js';
+import { useState } from 'react';
 
 export default function ProjectItem({ project }) {
+	const [showGif, setShowGif] = useState(false);
+
+	const toggleGif = () => {
+		setShowGif((prev) => !prev);
+	};
 	return (
 		<>
-			<div className="project-card">
-				<h2>{project.title}</h2>
+			<div id="project-headline-container">
+				<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+					<h3 id="project-headline">{project.title}</h3>
+				</a>
 				{project.gif ? (
+					<span id="gif-toggle" onClick={toggleGif}>
+						gif
+					</span>
+				) : null}
+			</div>
+			<p>{project.description}</p>
+			<div className="project-gif">
+				{showGif && project.gif ? (
 					<img src={project.gif} alt={`${project.title} gif`} />
-				) : project.image ? (
+				) : showGif && project.image ? (
 					<img src={project.image} alt={`${project.title} image`} />
 				) : null}
-				<p>{project.description}</p>
 			</div>
 		</>
 	);

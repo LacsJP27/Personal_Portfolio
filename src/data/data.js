@@ -44,11 +44,37 @@ export const EXPERIENCE = [
 // List in order of importants
 export const PROJECTS = [
 	{
-		title: 'Project Title',
-		image: 'path to image',
-		gif: 'path to gif',
-		description: 'description of project',
+		title: 'BeachBox (Hackathon Winner)',
+		githubLink: 'https://github.com/tuann72/2026-hookemhacks',
+		gif: '/BeachBoxDemoShort.gif',
+		description:
+			"Built and iterated a web game with a team of four utilizing computer vision body detection with Mediapipe to control in-game punches against another real-life player winning the Best use of Supabase at Hook'em Hacks 2026.",
 	},
+	{
+		title: 'Skillsprout',
+		githubLink: 'https://github.com/tuann72/skillsprout',
+		gif: '/skillsprout_demo.gif',
+		description:
+			'Built and deployed a full-stack AI learning platform during Hacklahoma 2026 (Hackathon) (Next.js, TypeScript, React) using the Claude API with forced tool use to generate structured skill trees from user prompts, backed by a Supabase/PostgreSQL schema.',
+	},
+	{
+		title: 'PantryPilot Pro',
+		githubLink: 'https://github.com/JacobWoolbright/PantryPilot2',
+		description:
+			'Developed ”Pantry Pilot,” a Java web/mobile application utilizing Maven to generate personalized grocery lists and recipe recommendations based on user preferences and on-hand ingredients. Utilized React Native and Expo to develop and test the mobile UI and application workflow',
+	},
+	{
+		title: 'Person-Leading Turtlebot',
+		githubLink:
+			'https://github.com/LacsJP27/Intelligent-Robotics-Final-Project',
+		gif: '/PersonLeadShort.gif',
+		description:
+			"Developed a program to detect the presence of people behind a robot and determine whether the robot should coninue it's preprogrammed tour or wait for people to catch up.",
+	},
+	// {
+	// 	title: 'Agentic Maze Value Iterator',
+	// 	description: 'TODO: DESCRIPTION',
+	// },
 ];
 
 export const PICTURES = [
