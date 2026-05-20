@@ -21,6 +21,7 @@
 body {
 	font-family: 'Inter', 'sans-serif';
 	margin: 0;
+	overflow-x: hidden;
 }
 
 #light-toggle-container {
@@ -49,4 +50,10 @@ body {
 	--spacing-xl: 56px;
 	--spacing-2xl: 64px;
 	--spacing-3xl: 96px;
+}
+
+@media (max-width: 768px) {
+	#page {
+		padding: var(--spacing-md) var(--spacing-lg);
+	}
 }

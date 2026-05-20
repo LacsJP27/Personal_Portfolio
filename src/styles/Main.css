@@ -13,6 +13,7 @@
 	align-self: flex-start;
 	text-align: left;
 	overflow: hidden;
+	max-width: 100%;
 	margin-left: var(--spacing-2xl);
 }
 
@@ -24,4 +25,14 @@
 
 #cube-container {
 	text-align: center;
+}
+
+@media (max-width: 768px) {
+	#main {
+		flex-direction: column;
+	}
+	#right-container {
+		margin-left: 0;
+		margin-top: var(--spacing-lg);
+	}
 }

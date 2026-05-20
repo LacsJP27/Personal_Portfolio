@@ -53,3 +53,17 @@
 	color: var(--muted-color);
 	margin: 0;
 }
+
+@media (max-width: 768px) {
+	#header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	#name {
+		font-size: 40px;
+	}
+	#right-side {
+		align-items: flex-start;
+		margin-top: var(--spacing-sm);
+	}
+}
