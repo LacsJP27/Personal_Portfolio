@@ -9,9 +9,6 @@ export default function ProjectList({ setActiveSection }) {
 	return (
 		<div className="projects">
 			<ul id="project-list">
-				<div id="project-instructions">
-					hover over project title to see demo (if available)
-				</div>
 				{PROJECTS.map((project, index) => (
 					<li key={index}>
 						<ProjectItem project={project} />
