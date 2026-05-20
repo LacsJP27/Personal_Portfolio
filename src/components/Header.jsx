@@ -8,7 +8,7 @@ import {
 } from '../constants/constants.js';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import '../styles/header.css';
+import '../styles/Header.css';
 
 export default function Header() {
 	const navigate = useNavigate();
