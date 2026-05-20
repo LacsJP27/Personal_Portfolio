@@ -2,6 +2,7 @@ import microsoftLogo from '../assets/microsoft.svg';
 import googleLogo from '../assets/google.svg';
 import momentusLogo from '../assets/momentus.png';
 import OULogo from '../assets/OU.png';
+// import AidanLaolu from '../assets/aidan_laolu.JPG	';
 
 export const EXPERIENCE = [
 	{
@@ -71,16 +72,44 @@ export const PROJECTS = [
 		description:
 			"Developed a program to detect the presence of people behind a robot and determine whether the robot should coninue it's preprogrammed tour or wait for people to catch up.",
 	},
-	// {
-	// 	title: 'Agentic Maze Value Iterator',
-	// 	description: 'TODO: DESCRIPTION',
-	// },
 ];
 
 export const PICTURES = [
 	{
-		title: 'Picture',
-		image: 'path to image',
+		title: '🥇 Oklahoma City, OK (3:45)',
+		image: '/okc_marathon.jpg',
+	},
+	{
+		title: '🏛️ Boston, MA',
+		image: '/jordan_boston.jpeg',
+	},
+	{
+		title: '🐶 Norman, OK',
+		image: '/dupes.jpg',
+	},
+	{
+		title: '🎉 Pittsburgh, PA',
+		image: '/aidan_laolu.JPG',
+	},
+	{
+		title: '⚾️ Chicago, IL',
+		image: '/ali_cubsgame.jpeg',
+	},
+	{
+		title: '🏃‍♂️ Dallas, TX (3:52)',
+		image: '/dallas_marathon.jpg',
+	},
+	{
+		title: '🫨 Dallas, TX',
+		image: '/dad_family.JPG',
+	},
+	{
+		title: '🌲 Ohiopyle, PA',
+		image: '/mom_family.jpeg',
+	},
+	{
+		title: '⛳️ Dallas, TX',
+		image: '/golf.jpeg',
 	},
 ];
 
