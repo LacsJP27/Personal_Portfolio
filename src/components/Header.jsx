@@ -20,7 +20,7 @@ export default function Header() {
 			</div>
 			<div id="right-side">
 				<div id="contact-info">
-					<a href={EMAIL} target="_blank" rel="noopener noreferrer">
+					<a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">
 						<Mail size={22} />
 					</a>
 					<a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
