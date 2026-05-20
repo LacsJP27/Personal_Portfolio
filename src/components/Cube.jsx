@@ -265,7 +265,9 @@ export default function Cube({ shouldExplode, onExplosionComplete }) {
 			requestAnimationFrame(() => setScattered(true));
 		});
 	}
-
+	/**
+	 * Unused for now
+	 */
 	function handleClick() {
 		if (mode === 'spinning') {
 			explodeCube();
@@ -287,6 +289,7 @@ export default function Cube({ shouldExplode, onExplosionComplete }) {
 			}, EXPLOSION_DURATION * 1000);
 		}
 	}
+
 	if (mode == 'exploding') {
 		return (
 			<div
@@ -295,7 +298,6 @@ export default function Cube({ shouldExplode, onExplosionComplete }) {
 					width: rect?.width,
 					height: rect?.height,
 				}}
-				onClick={handleClick}
 			>
 				{particles.map((p, idx) => (
 					<span
@@ -320,5 +322,5 @@ export default function Cube({ shouldExplode, onExplosionComplete }) {
 		);
 	}
 
-	return <pre ref={cubeRef} onClick={handleClick}></pre>;
+	return <pre ref={cubeRef}></pre>;
 }

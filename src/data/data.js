@@ -2,7 +2,7 @@ import microsoftLogo from '../assets/microsoft.svg';
 import googleLogo from '../assets/google.svg';
 import momentusLogo from '../assets/momentus.png';
 import OULogo from '../assets/OU.png';
-// import AidanLaolu from '../assets/aidan_laolu.JPG	';
+import firstPost from '../content/first-post.md?raw';
 
 export const EXPERIENCE = [
 	{
@@ -115,7 +115,9 @@ export const PICTURES = [
 
 export const BLOG_POSTS = [
 	{
-		title: 'Blog',
-		text: 'Blah blah blah',
+		title: 'Welcome to my blog!',
+		date: '2026-05-20',
+		slug: 'first-post',
+		content: firstPost,
 	},
 ];
