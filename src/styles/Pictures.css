@@ -24,3 +24,12 @@
 	object-fit: cover;
 	border-radius: 40px;
 }
+
+@media (max-width: 768px) {
+	#picture-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.picture-item img {
+		border-radius: 12px;
+	}
+}
