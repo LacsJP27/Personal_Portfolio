@@ -55,13 +55,6 @@
 	color: var(--primary-color);
 }
 
-#project-instructions {
-	font-family: var(--accent-font-family);
-	color: var(--muted-color);
-	font-size: var(--font-size-small);
-	margin-bottom: var(--spacing-sm);
-}
-
 .gif-toggle {
 	cursor: pointer;
 	font-family: var(--accent-font-family);

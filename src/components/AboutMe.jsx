@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import BackBtn from './BackBtn.jsx';
 import aboutMe from '../content/about-me.md?raw';

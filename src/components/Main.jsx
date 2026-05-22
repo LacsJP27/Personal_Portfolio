@@ -5,25 +5,14 @@ import Projects from './Projects';
 import '../styles/Main.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import {
-	PROJECTS_ROUTE,
-	PICTURES_ROUTE,
-	BLOG_ROUTE,
-} from '../constants/constants.js';
+import { PICTURES_ROUTE, BLOG_ROUTE } from '../constants/constants.js';
 
 export default function Main() {
-	// TODO: Need to pass callback to cube, pass shouldExplode to cube.
-	// when callback is called, set shouldExplode back to false and display the experience card
 	const navigate = useNavigate();
-	let [displayExperience, setDisplayExperience] = useState(false);
 	const [shouldExplode, setShouldExplode] = useState(false);
 	const [pendingSection, setPendingSection] = useState(null);
 	const tabs = ['experience', 'projects'];
 	const [activeSection, setActiveSection] = useState(null);
-
-	const onClickRedirect = (path) => {
-		navigate(path);
-	};
 
 	const onClickPopup = (clickedSection) => {
 		if (activeSection !== null) {
@@ -77,13 +66,9 @@ export default function Main() {
 				<Tab
 					number={3}
 					name="Pictures"
-					onClick={() => onClickRedirect(PICTURES_ROUTE)}
+					onClick={() => navigate(PICTURES_ROUTE)}
 				/>
-				<Tab
-					number={4}
-					name="Blog"
-					onClick={() => onClickRedirect(BLOG_ROUTE)}
-				/>
+				<Tab number={4} name="Blog" onClick={() => navigate(BLOG_ROUTE)} />
 			</div>
 			<div id="right-container">{renderRightPanel()}</div>
 		</div>

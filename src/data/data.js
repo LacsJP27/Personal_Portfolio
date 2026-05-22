@@ -3,7 +3,6 @@ import googleLogo from '../assets/google.svg';
 import momentusLogo from '../assets/momentus.png';
 import OULogo from '../assets/OU.png';
 import firstPost from '../content/first-post.md?raw';
-import aboutMe from '../content/about-me.md?raw';
 
 export const EXPERIENCE = [
 	{
@@ -11,9 +10,7 @@ export const EXPERIENCE = [
 		title: 'SWE Intern (Current)',
 		icon: microsoftLogo,
 		description:
-			'Working with Microsoft’s Commerce and Ecosystems team as a Software Engineer Intern this upcoming summer',
-		duration: 'Summer 2026',
-		location: 'Seattle, WA',
+			"Working with Microsoft's Commerce and Ecosystems team as a Software Engineer Intern this upcoming summer",
 	},
 	{
 		company: 'University of Oklahoma',
@@ -21,8 +18,6 @@ export const EXPERIENCE = [
 		icon: OULogo,
 		description:
 			'Help students understand core computer science concepts in a tutoring environment.',
-		duration: 'Summer 2024',
-		location: 'Remote',
 	},
 	{
 		company: 'Google',
@@ -30,8 +25,6 @@ export const EXPERIENCE = [
 		icon: googleLogo,
 		description:
 			"Worked with the search ads team to integrate Google Gemini into Google's programmable search engine.",
-		duration: 'Summer 2025',
-		location: 'Pittsburgh, PA',
 	},
 	{
 		company: 'Momentus Technologies',
@@ -39,8 +32,6 @@ export const EXPERIENCE = [
 		icon: momentusLogo,
 		description:
 			"Upgraded the frontend web components, using Vue.js, to utilize a newer version of Vue addressing the company's tech debt.",
-		duration: 'Summer 2024',
-		location: 'Remote',
 	},
 ];
 // List in order of importants

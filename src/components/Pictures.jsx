@@ -4,7 +4,6 @@ import PictureItem from './PictureItem.jsx';
 import '../styles/Pictures.css';
 
 export default function Pictures() {
-	const pictures = PICTURES;
 	return (
 		<>
 			<BackBtn />
@@ -12,7 +11,7 @@ export default function Pictures() {
 				<span id="pictures-title">Pictures</span>
 
 				<div id="picture-list">
-					{pictures.map((picture) => (
+					{PICTURES.map((picture) => (
 						<PictureItem key={picture.title} picture={picture} />
 					))}
 				</div>

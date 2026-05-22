@@ -42,7 +42,6 @@ export default function App() {
 							element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
 						/>
 						<Route path={ABOUT_ME_ROUTE} element={<AboutMe />} />
-						{/* <Route path="/projects" element={<ProjectList />} /> */}
 						<Route path={PICTURES_ROUTE} element={<Pictures />} />
 						<Route path={BLOG_ROUTE} element={<Blog />} />
 						<Route path={BLOG_POST_ROUTE} element={<BlogPost />} />

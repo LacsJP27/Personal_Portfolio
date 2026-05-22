@@ -12,7 +12,7 @@ export default function ProjectItem({ project }) {
 				<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
 					<h3 className="project-headline">{project.title}</h3>
 				</a>
-				{project.gif ? (
+				{project.gif || project.image ? (
 					<span className="gif-toggle" onClick={toggleGif}>
 						gif
 					</span>
