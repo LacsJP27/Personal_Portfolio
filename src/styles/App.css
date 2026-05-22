@@ -56,4 +56,9 @@ body {
 	#page {
 		padding: var(--spacing-md) var(--spacing-lg);
 	}
+	#light-toggle-container {
+		position: static;
+		margin-top: var(--spacing-lg);
+		padding-bottom: var(--spacing-lg);
+	}
 }
