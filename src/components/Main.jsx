@@ -1,7 +1,7 @@
 import Tab from './Tab';
 import Cube from './Cube';
 import Experience from './Experience';
-import Projects from './Projects';
+import ProjectList from './ProjectList.jsx';
 import '../styles/Main.css';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -35,7 +35,7 @@ export default function Main() {
 		}
 
 		if (activeSection === tabs[1]) {
-			return <Projects setActiveSection={setActiveSection} />;
+			return <ProjectList setActiveSection={setActiveSection} />;
 		}
 
 		return (

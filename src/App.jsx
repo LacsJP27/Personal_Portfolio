@@ -31,24 +31,22 @@ function Home({ darkMode, setDarkMode }) {
 }
 
 export default function App() {
-	let [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(false);
 	return (
-		<>
-			<div id="page" className={darkMode ? 'dark' : 'light'}>
-				<HashRouter>
-					<Routes>
-						<Route
-							path="/"
-							element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
-						/>
-						<Route path={ABOUT_ME_ROUTE} element={<AboutMe />} />
-						<Route path={PICTURES_ROUTE} element={<Pictures />} />
-						<Route path={BLOG_ROUTE} element={<Blog />} />
-						<Route path={BLOG_POST_ROUTE} element={<BlogPost />} />
-						<Route path={RESUME_ROUTE} element={<Resume />} />
-					</Routes>
-				</HashRouter>
-			</div>
-		</>
+		<div id="page" className={darkMode ? 'dark' : 'light'}>
+			<HashRouter>
+				<Routes>
+					<Route
+						path="/"
+						element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />}
+					/>
+					<Route path={ABOUT_ME_ROUTE} element={<AboutMe />} />
+					<Route path={PICTURES_ROUTE} element={<Pictures />} />
+					<Route path={BLOG_ROUTE} element={<Blog />} />
+					<Route path={BLOG_POST_ROUTE} element={<BlogPost />} />
+					<Route path={RESUME_ROUTE} element={<Resume />} />
+				</Routes>
+			</HashRouter>
+		</div>
 	);
 }

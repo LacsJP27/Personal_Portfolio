@@ -1,6 +1,6 @@
 import { EXPERIENCE } from '../data/data.js';
 import '../styles/Experience.css';
-import { ArrowLeft, X } from 'react-feather';
+import CloseBtn from './CloseBtn.jsx';
 
 export default function Experience({ setActiveSection }) {
 	return (
@@ -16,9 +16,7 @@ export default function Experience({ setActiveSection }) {
 					</li>
 				))}
 			</ul>
-			<button className="close-btn" onClick={() => setActiveSection(null)}>
-				<ArrowLeft size={16} />
-			</button>
+			<CloseBtn setActiveSection={setActiveSection} />
 		</div>
 	);
 }

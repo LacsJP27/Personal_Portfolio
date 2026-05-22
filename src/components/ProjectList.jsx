@@ -1,9 +1,7 @@
 import { PROJECTS } from '../data/data.js';
-import { ArrowLeft } from 'react-feather';
 import CloseBtn from './CloseBtn.jsx';
-import '../styles/Project.css';
-import { useState } from 'react';
 import ProjectItem from './ProjectItem.jsx';
+import '../styles/Project.css';
 
 export default function ProjectList({ setActiveSection }) {
 	return (

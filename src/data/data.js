@@ -34,7 +34,7 @@ export const EXPERIENCE = [
 			"Upgraded the frontend web components, using Vue.js, to utilize a newer version of Vue addressing the company's tech debt.",
 	},
 ];
-// List in order of importants
+// List in order of importance
 export const PROJECTS = [
 	{
 		title: 'BeachBox (Hackathon Winner)',

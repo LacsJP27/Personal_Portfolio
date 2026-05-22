@@ -1,8 +1,6 @@
 import { Sun, Moon } from 'react-feather';
 
 export default function LightToggle({ darkMode, setDarkMode }) {
-	darkMode = darkMode || false;
-
 	const toggleDarkMode = () => {
 		setDarkMode(!darkMode);
 	};
