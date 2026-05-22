@@ -8,12 +8,12 @@ export default function ProjectItem({ project }) {
 	};
 	return (
 		<>
-			<div id="project-headline-container">
+			<div className="project-headline-container">
 				<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-					<h3 id="project-headline">{project.title}</h3>
+					<h3 className="project-headline">{project.title}</h3>
 				</a>
 				{project.gif ? (
-					<span id="gif-toggle" onClick={toggleGif}>
+					<span className="gif-toggle" onClick={toggleGif}>
 						gif
 					</span>
 				) : null}

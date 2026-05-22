@@ -13,7 +13,7 @@
 	list-style-type: none;
 	padding-left: 0;
 }
-#job-subtitle {
+.job-subtitle {
 	margin-left: var(--spacing-sm);
 	font-family: var(--accent-font-family);
 	font-size: var(--font-size-small);
@@ -40,7 +40,7 @@
 	font-weight: var(--font-size-submasthead-weight);
 }
 
-#job-headline {
+.job-headline {
 	font-weight: var(--font-size-submasthead-weight);
 }
 

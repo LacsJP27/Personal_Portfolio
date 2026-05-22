@@ -25,7 +25,7 @@
 
 .blog-post-date {
 	font-family: var(--accent-font-family);
-	font-size: var(--font-submasthead);
+	font-size: var(--font-size-submasthead);
 	color: var(--muted-color);
 }
 

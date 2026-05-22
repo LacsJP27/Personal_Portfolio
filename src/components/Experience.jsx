@@ -8,9 +8,9 @@ export default function Experience({ setActiveSection }) {
 			<ul id="experience-list">
 				{EXPERIENCE.map((job, index) => (
 					<li key={index}>
-						<h3 id="job-headline">
+						<h3 className="job-headline">
 							<img src={job.icon} alt={job.company} /> {job.company}
-							<span id="job-subtitle">{job.title}</span>
+							<span className="job-subtitle">{job.title}</span>
 						</h3>
 						<p>{job.description}</p>
 					</li>

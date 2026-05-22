@@ -13,11 +13,15 @@
 	gap: var(--spacing-md);
 }
 
+#contact-info a {
+	color: inherit;
+}
+
 #contact-info a svg {
 	stroke: var(--muted-color);
 }
 #contact-info a svg:hover {
-	stroke: var(--dark-hairline-color);
+	stroke: currentColor;
 }
 
 #right-side {

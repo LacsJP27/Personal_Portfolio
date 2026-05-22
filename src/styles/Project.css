@@ -30,18 +30,18 @@
 	padding-bottom: 5px;
 }
 
-#project-headline-container {
+.project-headline-container {
 	display: flex;
 	flex-direction: row;
 	vertical-align: middle;
 	gap: var(--spacing-sm);
 }
 
-#project-headline {
+.project-headline {
 	font-weight: var(--font-size-submasthead-weight);
 }
 
-#project-headline:hover {
+.project-headline:hover {
 	text-decoration: underline;
 }
 
@@ -62,7 +62,7 @@
 	margin-bottom: var(--spacing-sm);
 }
 
-#gif-toggle {
+.gif-toggle {
 	cursor: pointer;
 	font-family: var(--accent-font-family);
 	font-size: var(--font-size-small);
