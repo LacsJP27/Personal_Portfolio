@@ -22,7 +22,6 @@
 }
 
 .blog-post-content pre {
-	background-color: #f0ede6;
 	border-radius: 8px;
 	padding: var(--spacing-sm);
 	overflow-x: auto;

@@ -265,30 +265,6 @@ export default function Cube({ shouldExplode, onExplosionComplete }) {
 			requestAnimationFrame(() => setScattered(true));
 		});
 	}
-	/**
-	 * Unused for now
-	 */
-	function handleClick() {
-		if (mode === 'spinning') {
-			explodeCube();
-		} else {
-			setScattered(false);
-			setTimeout(() => {
-				setMode('spinning');
-				setParticles([]);
-				animate(
-					FACES,
-					currAnglesRef.current[0],
-					currAnglesRef.current[1],
-					currAnglesRef.current[2],
-					cubeRef,
-					frameIdRef,
-					lastBufferRef,
-					currAnglesRef,
-				);
-			}, EXPLOSION_DURATION * 1000);
-		}
-	}
 
 	if (mode == 'exploding') {
 		return (
