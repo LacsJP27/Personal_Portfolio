@@ -3,6 +3,7 @@ import googleLogo from '../assets/google.svg';
 import momentusLogo from '../assets/momentus.png';
 import OULogo from '../assets/OU.png';
 import firstPost from '../content/first-post.md?raw';
+import spinningCube from '../content/spinning-cube.md?raw';
 
 export const EXPERIENCE = [
 	{
@@ -111,5 +112,11 @@ export const BLOG_POSTS = [
 		date: '2026-05-20',
 		slug: 'first-post',
 		content: firstPost,
+	},
+	{
+		title: 'Spinning Cube and Thoughts on AI as a Student',
+		date: '2026-05-22',
+		slug: 'spinning-cube',
+		content: spinningCube,
 	},
 ];
