@@ -6,7 +6,7 @@ export default function LightToggle({ darkMode, setDarkMode }) {
 	};
 	return (
 		<div id="light-toggle" onClick={toggleDarkMode}>
-			<div id="light-toggle-button">{darkMode ? <Sun /> : <Moon />}</div>
+			<div id="light-toggle-button">{darkMode ? <Moon /> : <Sun />}</div>
 		</div>
 	);
 }
